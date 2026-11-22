@@ -1,4 +1,4 @@
-# SPORTSTREAM
+# HYPERSTREAM
 A modular system for streaming data from one thing to another. Modularity scope creep got me again...
 
 ## Project Layout
