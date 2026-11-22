@@ -7,7 +7,7 @@ import (
 	"io"
 	"net/http"
 
-	"github.com/tedtasman/sportstream/internal/contract"
+	"github.com/tedtasman/hyperstream/internal/contract"
 )
 
 type RestConfig struct {

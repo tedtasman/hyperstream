@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/tedtasman/sportstream/internal/contract"
+	"github.com/tedtasman/hyperstream/internal/contract"
 )
 
 type constructor func(raw json.RawMessage) (contract.Source, error)
