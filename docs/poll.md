@@ -1,16 +1,16 @@
 ```mermaid
 sequenceDiagram
     autonumber
-    participant SCH as scheduler
+    participant WRK as worker
     participant PIP as pipeline
     participant SRC as source
     participant API as api
     participant TFM as transform
     participant SNK as sink
 
-    note over SCH: on poll target now
-    SCH->>PIP: start(target)
-    PIP-->>SCH: handle
+    note over WRK: on poll target now
+    WRK->>PIP: start(target)
+    PIP-->>WRK: handle
 
     PIP->>SRC: read(target.source)
     SRC->>API: GET
