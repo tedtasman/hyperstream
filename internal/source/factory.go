@@ -15,10 +15,10 @@ var constructors = map[string]constructor{
 }
 
 // Generic source constructor
-func New(kind string, raw json.RawMessage) (contract.Source, error) {
-	constructor, ok := constructors[kind]
+func New(spec contract.SourceSpec) (contract.Source, error) {
+	constructor, ok := constructors[spec.Kind]
 	if !ok {
-		return nil, fmt.Errorf("unknown source kind %q", kind)
+		return nil, fmt.Errorf("unknown source kind %q", spec.Kind)
 	}
-	return constructor(raw)
+	return constructor(spec.Config)
 }

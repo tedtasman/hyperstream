@@ -7,10 +7,19 @@ type SourceSpec struct {
 	Config json.RawMessage `json:"config"`
 }
 
+type WorkerSpec struct {
+	Kind   string          `json:"kind"`
+	Config json.RawMessage `json:"config"`
+}
+
+type TransformSpec struct{}
+
+type SinkSpec struct{}
+
 type Stream struct {
-	Name               string
-	IntervalSeconds    int
-	BackoffMaxSeconds  int
-	BackoffMaxFailures int
-	Source             SourceSpec
+	Name          string
+	WorkerSpec    WorkerSpec
+	SourceSpec    SourceSpec
+	TransformSpec TransformSpec
+	SinkSpec      SinkSpec
 }

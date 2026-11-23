@@ -16,6 +16,7 @@ type RestConfig struct {
 	Headers map[string]string `json:"headers"`
 }
 
+// implements contract.Source
 type RestSource struct{ cfg RestConfig }
 
 func NewRestSource(raw json.RawMessage) (contract.Source, error) {
