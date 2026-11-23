@@ -1,7 +1,10 @@
 package sink
 
-import "github.com/tedtasman/hyperstream/internal/contract"
+import (
+	"github.com/tedtasman/hyperstream/internal/config"
+	"github.com/tedtasman/hyperstream/internal/contract"
+)
 
-func New(spec contract.SinkSpec) contract.Sink {
+func New(spec config.SinkSpec) contract.Sink {
 	return &RabbitSink{}
 }

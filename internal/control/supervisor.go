@@ -7,6 +7,7 @@ import (
 	"os/signal"
 	"syscall"
 
+	"github.com/tedtasman/hyperstream/internal/config"
 	"github.com/tedtasman/hyperstream/internal/contract"
 	"github.com/tedtasman/hyperstream/internal/pipeline"
 	"github.com/tedtasman/hyperstream/internal/worker"
@@ -17,7 +18,7 @@ type entry struct {
 	cancel context.CancelFunc
 }
 
-func Run(ctx context.Context, streams []contract.Stream) error {
+func Run(ctx context.Context, streams []config.Stream) error {
 	ctx, stop := signal.NotifyContext(ctx, os.Interrupt, syscall.SIGTERM)
 	defer stop()
 
@@ -40,7 +41,7 @@ func Run(ctx context.Context, streams []contract.Stream) error {
 	return nil
 }
 
-func buildWorkers(streams []contract.Stream) ([]contract.Worker, error) {
+func buildWorkers(streams []config.Stream) ([]contract.Worker, error) {
 	workers := make([]contract.Worker, 0, len(streams))
 	for _, stream := range streams {
 		pl, err := pipeline.New(stream)

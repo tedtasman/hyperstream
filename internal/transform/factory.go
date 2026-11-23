@@ -1,7 +1,10 @@
 package transform
 
-import "github.com/tedtasman/hyperstream/internal/contract"
+import (
+	"github.com/tedtasman/hyperstream/internal/config"
+	"github.com/tedtasman/hyperstream/internal/contract"
+)
 
-func New(spec contract.TransformSpec) contract.Transform {
+func New(spec config.TransformSpec) contract.Transform {
 	return &JsonTransform{}
 }
