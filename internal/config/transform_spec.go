@@ -1,3 +1,8 @@
 package config
 
-type TransformSpec struct{}
+import "encoding/json"
+
+type TransformSpec struct {
+	Kind   string
+	Config json.RawMessage
+}

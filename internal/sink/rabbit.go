@@ -1,6 +1,10 @@
 package sink
 
-// implements contract.Sink
-type RabbitSink struct{}
+type RabbitConfig struct{}
 
-func (s *RabbitSink) Write()
+// implements contract.Sink
+type RabbitSink struct{ cfg RabbitConfig }
+
+func (s *RabbitSink) Write(payload []byte) error {
+	return nil
+}

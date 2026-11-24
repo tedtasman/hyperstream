@@ -6,5 +6,5 @@ import (
 )
 
 func New(spec config.SinkSpec) contract.Sink {
-	return &RabbitSink{}
+	return nil
 }

@@ -1,3 +1,8 @@
 package config
 
-type SinkSpec struct{}
+import "encoding/json"
+
+type SinkSpec struct {
+	Kind string
+	cfg  json.RawMessage
+}

@@ -6,5 +6,5 @@ import (
 )
 
 func New(spec config.TransformSpec) contract.Transform {
-	return &JsonTransform{}
+	return &JsonTransform{cfg: spec}
 }

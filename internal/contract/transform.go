@@ -1,5 +1,5 @@
 package contract
 
 type Transform interface {
-	Apply()
+	Apply(input []byte) ([]byte, error)
 }

@@ -1,5 +1,5 @@
 package contract
 
 type Sink interface {
-	Write()
+	Write(payload []byte) error
 }
